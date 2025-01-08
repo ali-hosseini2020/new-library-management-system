@@ -1,5 +1,6 @@
 package org.example.newlibrarymanagementsystem.user.service;
 import lombok.RequiredArgsConstructor;
+import org.example.newlibrarymanagementsystem.common.exception.ResourceNotFoundException;
 import org.example.newlibrarymanagementsystem.user.api.dto.UserDTO;
 import org.example.newlibrarymanagementsystem.user.api.mapper.UserMapper;
 import org.example.newlibrarymanagementsystem.user.domain.User;

@@ -7,5 +7,7 @@ public interface UserService {
     UserDTO getUserById(Long id);
     UserDTO createUser(UserDTO userDTO);
     void deleteUser(Long id);
+
+    UserDTO updateUser(Long id, UserDTO userDTO);
 }
 
