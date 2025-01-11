@@ -3,7 +3,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 import jakarta.persistence.*;
-
 @Entity
 @Table(name = "administrators")
 @Getter
@@ -13,6 +12,7 @@ import jakarta.persistence.*;
 @EqualsAndHashCode
 @ToString
 @Builder
+
 public class Administrator {
 
     @Id
@@ -26,6 +26,9 @@ public class Administrator {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 }
+
+
+
 
 /*
 public class Administrator extends User {

@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 @Getter
 @AllArgsConstructor
 @ToString
-public class UserCreatedEvent {
 
+public class UserCreatedEvent {
     private final Long userId;           // Unique ID of the created user
     private final String username;       // Username of the created user
     private final String email;          // Email of the created user
@@ -19,8 +19,6 @@ public class UserCreatedEvent {
 
     // Additional fields like roles or metadata can also be included
 }
-
-
 
 /*
 @Getter

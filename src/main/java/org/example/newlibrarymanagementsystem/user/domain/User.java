@@ -2,14 +2,10 @@ package org.example.newlibrarymanagementsystem.user.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import org.example.newlibrarymanagementsystem.common.enums.UserRole;
+import org.example.newlibrarymanagementsystem.fine.domain.Fine;
 import org.example.newlibrarymanagementsystem.loan.domain.Loan;
-import java.time.LocalDateTime;
-import jakarta.persistence.*;
-import lombok.*;
 import org.example.newlibrarymanagementsystem.reservation.domain.Reservation;
-
 import java.util.Set;
-
 @Entity
 @Table(name = "users")
 @Getter
@@ -19,6 +15,7 @@ import java.util.Set;
 @EqualsAndHashCode
 @ToString
 @Builder
+
 public class User {
 
     @Id
@@ -33,6 +30,10 @@ public class User {
 
     @Column(nullable = false)
     private String email;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private UserRole role;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
@@ -53,6 +54,8 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
     private Set<Fine> fines;
+
+
 }
 
 

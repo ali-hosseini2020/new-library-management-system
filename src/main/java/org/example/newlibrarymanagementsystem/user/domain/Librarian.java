@@ -1,7 +1,6 @@
 package org.example.newlibrarymanagementsystem.user.domain;
 import jakarta.persistence.*;
 import lombok.*;
-
 @Entity
 @Table(name = "librarians")
 @Getter
@@ -11,6 +10,7 @@ import lombok.*;
 @EqualsAndHashCode
 @ToString
 @Builder
+
 public class Librarian {
 
     @Id

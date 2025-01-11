@@ -16,6 +16,10 @@ public class ErrorResponse {
         this.timestamp = timestamp;
     }
 
+    public ErrorResponse(String message, String resourceNotFound) {
+
+    }
+
     // Getters and Setters
     public int getStatus() {
         return status;

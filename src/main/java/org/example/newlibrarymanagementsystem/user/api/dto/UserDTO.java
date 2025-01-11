@@ -1,19 +1,24 @@
 package org.example.newlibrarymanagementsystem.user.api.dto;
-import lombok.Data;
-import lombok.Getter;
-import org.example.newlibrarymanagementsystem.common.enums.UserRole;
+import lombok.*;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@ToString
+@Builder
+
+public class UserDTO {
+    private Long id;
+    private String username;
+    private String password;
+    private String email;
+    private String role; // Enum as a string for readability
+}
 
 
-//@Data
-//package com.example.dto;
-
-//import com.example.common.enums.UserRole;
-
-import java.time.LocalDateTime;
-
-/**
- * Data Transfer Object for User.
- */
+/*
 public class UserDTO {
 
     private Long id;
@@ -98,22 +103,13 @@ public class UserDTO {
                 '}';
     }
 
-    /*public UserDTO orElseThrow(Object o) {
-    }*/
+    */
+/*public UserDTO orElseThrow(Object o) {
+    }*//*
+
 }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+*/
    /* private Long id;
     private String username;
     private String fullName;
