@@ -4,25 +4,64 @@ import lombok.*;
 import org.example.newlibrarymanagementsystem.common.enums.UserRole;
 import org.example.newlibrarymanagementsystem.loan.domain.Loan;
 import java.time.LocalDateTime;
-import java.util.List;
-//package com.library.user.domain;
-
-/*
-import com.library.loan.domain.Loan;
 import jakarta.persistence.*;
 import lombok.*;
+import org.example.newlibrarymanagementsystem.reservation.domain.Reservation;
 
-import java.time.LocalDateTime;
-import java.util.List;
-*/
+import java.util.Set;
 
+@Entity
+@Table(name = "users")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
+@ToString
 @Builder
-@Entity
-@Table(name = "users")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, unique = true)
+    private String username;
+
+    @Column(nullable = false)
+    private String password;
+
+    @Column(nullable = false)
+    private String email;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private Librarian librarian;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private Administrator administrator;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private Set<Loan> loans;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private Set<Reservation> reservations;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private Set<Fine> fines;
+}
+
+
+
+
+
+
+
+/*
 public class User {
 
     @Id
@@ -65,11 +104,7 @@ public class User {
         this.updatedAt = LocalDateTime.now();
     }
 }
-
-
-
-
-
+*/
 
 /*@Getter
 @Setter

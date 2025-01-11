@@ -4,9 +4,9 @@ package org.example.newlibrarymanagementsystem.common.enums;
  * Enum representing notification types.
  */
 public enum NotificationType {
-    EMAIL("Email notification"),
-    SMS("SMS notification"),
-    PUSH("Push notification");
+    EMAIL("Notification sent via email"),
+    SMS("Notification sent via SMS"),
+    PUSH("Notification sent via push notification");
 
     private final String description;
 
